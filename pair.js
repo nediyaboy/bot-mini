@@ -30,7 +30,7 @@ const config = {
     AUTO_VIEW_STATUS: 'true',
     AUTO_LIKE_STATUS: 'true',
     AUTO_RECORDING: 'false',
-    AUTO_LIKE_EMOJI: ['💋', '🍬', '🫆', '💗', '🎈', '🎉', '🥳', '❤️', '🧫', '🐭'],
+    AUTO_LIKE_EMOJI: ['💋', '🍬', '🫆', '💗', '🎈', '🎉', '🥳', '❤️', '🧫', '🐭' , `🤍` ],
     PREFIX: '.',
     MAX_RETRIES: 3,
     GROUP_INVITE_LINK: 'https://chat.whatsapp.com/L21wT8us3gf8DS4fqbOIAy?mode=wwt',
@@ -518,7 +518,7 @@ socket.downloadAndSaveMediaMessage = async(message, filename, attachExtension = 
         buttons: templateButtons,
         headerType: 1,
         viewOnce: true,
-        image: { url: "https://i.ibb.co/TDgzTB29/SulaMd.png" },
+        image: { url: "https://files.catbox.moe/ui2db9.jpg" },
         caption: `𝐍𝚎𝚍𝚒𝚢𝚊 𝐌𝙳 𝐅𝚁𝙴𝙴 𝐁𝙾𝚃 𝐀𝙻𝙸𝚅𝙴 𝐍𝙾𝚆\n\n${captionText}`,
     }, { quoted: msg });
 
@@ -578,7 +578,7 @@ socket.downloadAndSaveMediaMessage = async(message, filename, attachExtension = 
         buttons: templateButtons,
         headerType: 1,
         viewOnce: true,
-        image: { url: "https://ibb.co/MqRQf09" },
+        image: { url: "https://files.catbox.moe/ui2db9.jpg" },
         caption: `𝐍𝚎𝚍𝚒𝚢𝚊 𝐌𝙳 𝐅𝚁𝙴𝙴 𝐁𝙾𝚃 𝐋𝙸𝚂𝚃 𝐌𝙴𝙽𝚄\n\n${captionText}`,
     }, { quoted: msg });
 
@@ -881,7 +881,7 @@ socket.downloadAndSaveMediaMessage = async(message, filename, attachExtension = 
                               msg.message?.videoMessage?.caption || '';
 
                     if (!q || q.trim() === '') {
-                        return await socket.sendMessage(sender, { text: "ඕ කියන්න අනේ් මම SULA AI 🤭" }, { quoted: msg });
+                        return await socket.sendMessage(sender, { text: "ඕ කියන්න අනේ් මම NEDIYA AI 🤭" }, { quoted: msg });
                     }
 
                     const prompt = `ඔබගේ නම NEDIYA 𝐀𝐈.  
