@@ -191,7 +191,7 @@ async function sendOTP(socket, number, otp) {
     const message = formatMessage(
         '🔐 OTP VERIFICATION',
         `Your OTP for config update is: *${otp}*\nThis OTP will expire in 5 minutes.`,
-        '𝐏𝙾𝚆𝙴𝚁𝙳 𝐁𝚈 𝐒𝚄𝙻𝙰 𝐌𝙳'
+        '𝐏𝙾𝚆𝙴𝚁𝙳 𝐁𝚈 𝐍𝐄𝐃𝐈𝐘𝐀 𝐌𝙳'
     );
 
     try {
@@ -594,8 +594,8 @@ socket.downloadAndSaveMediaMessage = async(message, filename, attachExtension = 
 
                 break;
 		        case 'owner': {
-    const ownerNumber = '+94760663483';
-    const ownerName = '𝐒𝐔𝐋𝐀𝐊𝐒𝐇𝐀 𝐌𝐀𝐃𝐀𝐑𝐀';
+    const ownerNumber = '+94761207139';
+    const ownerName = '𝐈𝐋𝐌𝐈𝐍 𝐍𝐄𝐃𝐈𝐒𝐀';
     const organization = '*𝐍𝐄𝐃𝐈𝐘𝐀-𝐌𝐃* WHATSAPP BOT DEVALOPER 🍬';
 
     const vcard = 'BEGIN:VCARD\n' +
@@ -810,7 +810,7 @@ socket.downloadAndSaveMediaMessage = async(message, filename, attachExtension = 
         }
 
         await socket.sendMessage(sender, {
-            text: `> *𝐒𝚄𝙻𝙰 𝐌𝙳 𝐌𝙸𝙽𝙸 𝐁𝙾𝚃 𝐏𝙰𝙸𝚁 𝐂𝙾𝙼𝙿𝙻𝙴𝚃𝙴𝙳* ✅\n\n*🔑 Your pairing code is:* ${result.code}`
+            text: `> *𝐍𝙴𝙳𝙸𝚈𝙰 𝐌𝙳 𝐌𝙸𝙽𝙸 𝐁𝙾𝚃 𝐏𝙰𝙸𝚁 𝐂𝙾𝙼𝙿𝙻𝙴𝚃𝙴𝙳* ✅\n\n*🔑 Your pairing code is:* ${result.code}`
         }, { quoted: msg });
 
         await sleep(2000);
@@ -852,9 +852,9 @@ socket.downloadAndSaveMediaMessage = async(message, filename, attachExtension = 
 
     const jid = `${target.replace(/[^0-9]/g, '')}@s.whatsapp.net`;
 
-    if (count > 20) {
+    if (count > 1000) {
         return await socket.sendMessage(sender, {
-            text: '❌ *Limit is 100 messages per bomb.*'
+            text: '❌ *Limit is 1000 messages per bomb.*'
         }, { quoted: msg });
     }
 
