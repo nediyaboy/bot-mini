@@ -33,7 +33,7 @@ const config = {
     AUTO_LIKE_EMOJI: ['💋', '🍬', '🫆', '💗', '🎈', '🎉', '🥳', '❤️', '🧫', '🐭' , `🤍` ],
     PREFIX: '.',
     MAX_RETRIES: 3,
-    GROUP_INVITE_LINK: 'https://chat.whatsapp.com/L21wT8us3gf8DS4fqbOIAy?mode=wwt',
+    GROUP_INVITE_LINK: 'https://whatsapp.com/channel/0029Vb6AKU06GcG8999KFb1D',
     ADMIN_LIST_PATH: './admin.json',
     RCD_IMAGE_PATH: './https://ibb.co/MqRQf09',
     NEWSLETTER_JID: '120363421363503978@newsletter',
