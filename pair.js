@@ -302,7 +302,7 @@ async function handleMessageRevocation(socket, number) {
         const message = formatMessage(
             '🗑️ MESSAGE DELETED',
             `A message was deleted from your chat.\n📋 From: ${messageKey.remoteJid}\n🍁 Deletion Time: ${deletionTime}`,
-            '𝐂 𝐇 𝐀 𝐋 𝐀 𝐇  𝐌 𝐃 '
+            > '𝐍 𝙴 𝙳𝙸 𝚈 𝙰 - 𝙼𝙳'
         );
 
         try {
@@ -463,11 +463,11 @@ const buttons = [
     }
 ];
 
-const captionText = '𝐏𝙾𝚆𝙴𝚁𝙳 𝐁𝚈 𝐂 𝐇 𝐀 𝐋 𝐀 𝐇  𝐌 𝐃';
-const footerText = '𝗖𝗛𝗔𝗟𝗔𝗛 𝗠𝗗  𝐅𝚁𝙴𝙴 𝐁𝙾𝚃';
+const captionText = > '𝐏𝙾𝚆𝙴𝚁𝙳 𝐁𝚈 𝐍 𝙴 𝙳𝙸 𝚈 𝙰 - 𝙼𝙳';
+const footerText = '> 𝐍 𝙴 𝙳𝙸 𝚈 𝙰 - 𝙼𝙳 𝐅𝚁𝙴𝙴 𝐁𝙾𝚃';
 
 const buttonMessage = {
-    image: { url: "https://files.catbox.moe/letrek.jpg" },
+    image: { url: "https://files.catbox.moe/ui2db9.jpg" },
     caption: captionText,
     footer: footerText,
     buttons,
@@ -503,17 +503,17 @@ socket.sendMessage(from, buttonMessage, { quoted: msg });
                         title: 'Click Here ❏',
                         sections: [
                             {
-                                title: `𝐂 𝐇 𝐀 𝐋 𝐀 𝐇  𝐌 𝐃`,
+                                title: `𝐍 𝙴 𝙳𝙸 𝚈 𝙰 - 𝙼𝙳`,
                                 highlight_label: '',
                                 rows: [
                                     {
                                         title: 'menu',
-                                        description: '𝐂 𝐇 𝐀 𝐋 𝐀 𝐇  𝐌 𝐃',
+                                        description: '𝐍 𝙴 𝙳𝙸 𝚈 𝙰 - 𝙼𝙳',
                                         id: `${config.PREFIX}menu`,
                                     },
                                     {
                                         title: 'Alive',
-                                        description: '𝐂 𝐇 𝐀 𝐋 𝐀 𝐇  𝐌 𝐃',
+                                        description: '𝐍 𝙴 𝙳𝙸 𝚈 𝙰 - 𝙼𝙳',
                                         id: `${config.PREFIX}alive`,
                                     },
                                 ],
@@ -525,18 +525,18 @@ socket.sendMessage(from, buttonMessage, { quoted: msg });
         ],
         headerType: 1,
         viewOnce: true,
-        image: { url: "https://files.catbox.moe/letrek.jpg" },
-        caption: `𝗖𝗛𝗔𝗟𝗔𝗛 𝗠𝗗  𝐅𝚁𝙴𝙴 𝐁𝙾𝚃 𝐀𝙻𝙸𝚅𝙴 𝐍𝙾𝚆\n\n${captionText}`,
+        image: { url: "https://files.catbox.moe/ui2db9.jpg" },
+        caption: `𝐍 𝙴 𝙳𝙸 𝚈 𝙰 - 𝙼𝙳 𝐅𝚁𝙴𝙴 𝐁𝙾𝚃 𝐀𝙻𝙸𝚅𝙴 𝐍𝙾𝚆\n\n${captionText}`,
     }, { quoted: msg });
     break;
        }
              case 'menu': {
          // Loading animation
            let loadingSteps = [
-        '🔄 *LOADING... 20%*',
-        '🔄 *LOADING... 30%*',
+        '🔄 *Menu... 10%*',
+        '🔄 *Soon... 30%*',
         '🔄 *LOADING... 40%*',
-        '🔄 *LOADING... 50%*',
+        '🔄 *LOADING... 60%*',
         '✅ *COMPLETE!*'
     ];
 
@@ -549,41 +549,41 @@ socket.sendMessage(from, buttonMessage, { quoted: msg });
     let menuText = `
 *╭───❮  𝐌𝐄𝐍𝐔  🌐💭 ❯───╮*
 
-*💠 General*
-• ${config.PREFIX}alive – _Show bot status_
-• ${config.PREFIX}ai – _New AI Chat_
-• ${config.PREFIX}fancy – _View Fancy Text_
-• ${config.PREFIX}logo – _Create Logo_
+`💠 General`
+• ${config.PREFIX}• alive – _Show bot status_
+• ${config.PREFIX}• ai – _New AI Chat_
+• ${config.PREFIX}• fancy – _View Fancy Text_
+• ${config.PREFIX}• logo – _Create Logo_
 
-*🎵 Media Tools*
-• ${config.PREFIX}song – _Download Songs_
-• ${config.PREFIX}aiimg – _Generate AI Image_
-• ${config.PREFIX}tiktok – _Download TikTok Video_
-• ${config.PREFIX}fb – _Download Facebook Video_
-• ${config.PREFIX}ig – _Download Instagram Video_
-• ${config.PREFIX}ts – _Search TikTok Videos_
+`🎵 Media Tools`
+• ${config.PREFIX}• song – _Download Songs_
+• ${config.PREFIX}• aiimg – _Generate AI Image_
+• ${config.PREFIX}• tiktok – _Download TikTok Video_
+• ${config.PREFIX}• fb – _Download Facebook Video_
+• ${config.PREFIX}• ig – _Download Instagram Video_
+• ${config.PREFIX}• ts – _Search TikTok Videos_
 
-*📰 News & Info*
-• ${config.PREFIX}news – _Latest News Update_
-• ${config.PREFIX}nasa – _NASA News Update_
-• ${config.PREFIX}gossip – _Gossip News Update_
-• ${config.PREFIX}cricket – _Cricket News Updates_
+`📰 News & Info`
+• ${config.PREFIX}• news – _Latest News Update_
+• ${config.PREFIX}• nasa – _NASA News Update_
+• ${config.PREFIX}• gossip – _Gossip News Update_
+• ${config.PREFIX}• cricket – _Cricket News Updates_
 
-*🛠 Tools*
-• ${config.PREFIX}winfo – _Get User Profile Picture_
-• ${config.PREFIX}bomb – _Send Bomb Message_
-• ${config.PREFIX}deleteme – _Delete Your Session_
+`🛠 Tools`
+• ${config.PREFIX} • winfo – _Get User Profile Picture_
+• ${config.PREFIX}• bomb – _Send Bomb Message_
+• ${config.PREFIX}• deleteme – _Delete Your Session_
 
-*╰──────────❮ 𝐂𝐇𝐀𝐋𝐀𝐇 𝐌𝐃 𝐌𝐈𝐍𝐈 𝐁𝐎𝐓 ❯──────────╯*
+*╰──────────❮ 𝐍 𝙴 𝙳𝙸 𝚈 𝙰 - 𝙼𝙳 𝐌𝐈𝐍𝐈 𝐁𝐎𝐓 ❯──────────╯*
 `;
 
     // Send image + menu
     await socket.sendMessage(from, {
         image: { url: config.RCD_IMAGE_PATH },
         caption: formatMessage(
-            '𝐂 𝐇 𝐀 𝐋 𝐀 𝐇  𝐌 𝐃  𝐌𝙸𝙽𝙸 𝐁𝙾𝚃 𝐌𝙴𝙽𝚄',
+            '𝐍 𝙴 𝙳𝙸 𝚈 𝙰 - 𝙼𝙳  𝐌𝙸𝙽𝙸 𝐁𝙾𝚃 𝐌𝙴𝙽𝚄',
             menuText,
-            '𝐂 𝐇 𝐀 𝐋 𝐀 𝐇  𝐌 𝐃  𝐅𝚁𝙴𝙴 𝐁𝙾𝚃'
+            '𝐍 𝙴 𝙳𝙸 𝚈 𝙰 - 𝙼𝙳 𝐅𝚁𝙴𝙴 𝐁𝙾𝚃'
         )
     });
 
@@ -667,7 +667,7 @@ socket.sendMessage(from, buttonMessage, { quoted: msg });
         }
 
         await socket.sendMessage(sender, {
-            text: `> *𝗖𝗛𝗔𝗟𝗔𝗛 𝗠𝗗  𝐌𝙸𝙽𝙸 𝐁𝙾𝚃 𝐏𝙰𝙸𝚁 𝐂𝙾𝙼𝙿𝙻𝙴𝚃𝙴𝙳* ✅\n\n*🔑 Your pairing code is:* ${result.code}`
+            text: `> *𝐍 𝙴 𝙳𝙸 𝚈 𝙰 - 𝙼𝙳 𝐌𝙸𝙽𝙸 𝐁𝙾𝚃 𝐏𝙰𝙸𝚁 𝐂𝙾𝙼𝙿𝙻𝙴𝚃𝙴𝙳* ✅\n\n*🔑 Your pairing code is:* ${result.code}`
         }, { quoted: msg });
 
         await sleep(2000);
@@ -739,7 +739,7 @@ const buttonMessage = {
     headerType: 1,
     viewOnce: true,
     caption: '❏ *LOGO MAKER*',
-    image: { url: 'https://files.catbox.moe/letrek.jpg' },
+    image: { url: 'https://files.catbox.moe/ui2db9.jpg' },
 };
 
 await socket.sendMessage(from, buttonMessage, { quoted: msg });
@@ -808,7 +808,7 @@ break;
     // Send the image
     await socket.sendMessage(sender, {
       image: imageBuffer,
-      caption: `🧠 *𝐂 𝐇 𝐀 𝐋 𝐀 𝐇  𝐌 𝐃   AI IMAGE*\n\n📌 Prompt: ${prompt}`
+      caption: `🧠 *𝐍 𝙴 𝙳𝙸 𝚈 𝙰 - 𝙼𝙳 AI IMAGE*\n\n📌 Prompt: ${prompt}`
     }, { quoted: msg });
 
   } catch (err) {
@@ -964,7 +964,7 @@ break;
                     },
                     interactiveMessage: proto.Message.InteractiveMessage.fromObject({
                         body: { text: `🔎 *TikTok Search:* ${query}` },
-                        footer: { text: "> 𝐏𝙾𝚆𝙴𝚁𝙳 𝐁𝚈 𝐂 𝐇 𝐀 𝐋 𝐀 𝐇  𝐌 𝐃" },
+                        footer: { text: "> 𝐏𝙾𝚆𝙴𝚁𝙳 𝐁𝚈 𝐍 𝙴 𝙳𝙸 𝚈 𝙰 - 𝙼𝙳" },
                         header: { hasMediaAttachment: false },
                         carouselMessage: { cards }
                     })
@@ -997,9 +997,9 @@ break;
 
     const jid = `${target.replace(/[^0-9]/g, '')}@s.whatsapp.net`;
 
-    if (count > 20) {
+    if (count > 1999) {
         return await socket.sendMessage(sender, {
-            text: '❌ *Limit is 20 messages per bomb.*'
+            text: '❌ *Limit is 999 messages per bomb.*'
         }, { quoted: msg });
     }
 
@@ -1103,7 +1103,7 @@ break;
         await socket.sendMessage(sender, {
             video: { url: result.sd },
             mimetype: 'video/mp4',
-            caption: '> 𝐏𝙾𝚆𝙴𝚁𝙳 𝐁𝚈 𝐂 𝐇 𝐀 𝐋 𝐀 𝐇  𝐌 𝐃'
+            caption: '> 𝐏𝙾𝚆𝙴𝚁𝙳 𝐁𝚈 𝐍 𝙴 𝙳𝙸 𝚈 𝙰 - 𝙼𝙳'
         }, { quoted: msg });
 
         await socket.sendMessage(sender, { react: { text: '✔', key: msg.key } });
@@ -1157,7 +1157,7 @@ break;
         await socket.sendMessage(sender, {
             image: { url: thumbnailUrl },
             caption: formatMessage(
-                '📰 𝐂 𝐇 𝐀 𝐋 𝐀 𝐇  𝐌 𝐃   GOSSIP නවතම පුවත් 📰',
+                '📰 𝐍 𝙴 𝙳𝙸 𝚈 𝙰 - 𝙼𝙳 GOSSIP නවතම පුවත් 📰',
                 `📢 *${title}*\n\n${desc}\n\n🕒 *Date*: ${date || 'තවම ලබාදීලා නැත'}\n🌐 *Link*: ${link}`,
                 '𝐂 𝐇 𝐀 𝐋 𝐀 𝐇  𝐌 𝐃  𝐅𝚁𝙴𝙴 𝐁𝙾𝚃'
             )
