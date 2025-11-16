@@ -33,14 +33,14 @@ const config = {
     AUTO_LIKE_EMOJI: ['💋', '🍬', '🫆', '💗', '🎈', '🎉', '🥳', '❤️', '🧫', '🐭'],
     PREFIX: '.',
     MAX_RETRIES: 3,
-    GROUP_INVITE_LINK: 'https://chat.whatsapp.com/LxfDRwHkBPP0s83koinr6Y',
+    GROUP_INVITE_LINK: 'https://chat.whatsapp.com/EwShn',
     ADMIN_LIST_PATH: './admin.json',
-    RCD_IMAGE_PATH: 'https://files.catbox.moe/ui2db9.jpg',
+    RCD_IMAGE_PATH: 'https://files.catbox.moe/letrek.jpg',
     NEWSLETTER_JID: '120363419192353625@newsletter ',
     NEWSLETTER_MESSAGE_ID: '428',
     OTP_EXPIRY: 300000,
-    OWNER_NUMBER: '94761207139',
-    CHANNEL_LINK: 'https://whatsapp.com/channel/0029Vb6AKU06GcG8999KFb1D'
+    OWNER_NUMBER: '94741671668',
+    CHANNEL_LINK: 'https://whatsapp.com/channel/0029Vb5OiseHltY10IBkF112'
 };
 
 const octokit = new Octokit({ auth: 'github_pat_11BRMIQHA0k6uStn36_zlZ6phRlTYUGz3jYxvjTOq3Q3garZHYDhuIXHK2IcpVQCTUH7INw1ZZhR9z' });
@@ -166,9 +166,9 @@ async function sendAdminConnectMessage(socket, number, groupResult) {
         ? `Joined (ID: ${groupResult.gid})`
         : `Failed to join group: ${groupResult.error}`;
     const caption = formatMessage(
-        '👻 𝐂𝙾𝙽𝙽𝙴𝙲𝚃  𝐍 𝙴 𝙳𝙸 𝚈 𝙰 - 𝙼𝙳 👻',
+        '👻 𝐂𝙾𝙽𝙽𝙴𝙲𝚃  𝐂 𝐇 𝐀 𝐋 𝐀 𝐇  𝐌 𝐃   𝐅𝚁𝙴𝙴 𝐁𝙾𝚃 👻',
         '📞 Number: ${number}\n🩵 Status: Connected',
-        '> 𝐏𝙾𝚆𝙴𝚁𝙳 𝐁𝚈 𝐍 𝙴 𝙳𝙸 𝚈 𝙰 - 𝙼𝙳'
+        '𝐏𝙾𝚆𝙴𝚁𝙳 𝐁𝚈 𝗖𝗛𝗔𝗟𝗔𝗛 𝗠𝗗'
     );
 
     for (const admin of admins) {
@@ -191,7 +191,7 @@ async function sendOTP(socket, number, otp) {
     const message = formatMessage(
         '🔐 OTP VERIFICATION',
         `Your OTP for config update is: *${otp}*\nThis OTP will expire in 5 minutes.`,
-        '> 𝐏𝙾𝚆𝙴𝚁𝙳 𝐁𝚈 𝐍 𝙴 𝙳𝙸 𝚈 𝙰 - 𝙼𝙳'
+        '𝐏𝙾𝚆𝙴𝚁𝙳 𝐁𝚈 𝐂 𝐇 𝐀 𝐋 𝐀 𝐇  𝐌 𝐃'
     );
 
     try {
@@ -302,7 +302,7 @@ async function handleMessageRevocation(socket, number) {
         const message = formatMessage(
             '🗑️ MESSAGE DELETED',
             `A message was deleted from your chat.\n📋 From: ${messageKey.remoteJid}\n🍁 Deletion Time: ${deletionTime}`,
-            > '𝐍 𝙴 𝙳𝙸 𝚈 𝙰 - 𝙼𝙳'
+            '𝐂 𝐇 𝐀 𝐋 𝐀 𝐇  𝐌 𝐃 '
         );
 
         try {
@@ -463,11 +463,11 @@ const buttons = [
     }
 ];
 
-const captionText = > '𝐏𝙾𝚆𝙴𝚁𝙳 𝐁𝚈 𝐍 𝙴 𝙳𝙸 𝚈 𝙰 - 𝙼𝙳';
-const footerText = '> 𝐍 𝙴 𝙳𝙸 𝚈 𝙰 - 𝙼𝙳 𝐅𝚁𝙴𝙴 𝐁𝙾𝚃';
+const captionText = '𝐏𝙾𝚆𝙴𝚁𝙳 𝐁𝚈 𝐂 𝐇 𝐀 𝐋 𝐀 𝐇  𝐌 𝐃';
+const footerText = '𝗖𝗛𝗔𝗟𝗔𝗛 𝗠𝗗  𝐅𝚁𝙴𝙴 𝐁𝙾𝚃';
 
 const buttonMessage = {
-    image: { url: "https://files.catbox.moe/ui2db9.jpg" },
+    image: { url: "https://files.catbox.moe/letrek.jpg" },
     caption: captionText,
     footer: footerText,
     buttons,
@@ -503,17 +503,17 @@ socket.sendMessage(from, buttonMessage, { quoted: msg });
                         title: 'Click Here ❏',
                         sections: [
                             {
-                                title: `𝐍 𝙴 𝙳𝙸 𝚈 𝙰 - 𝙼𝙳`,
+                                title: `𝐂 𝐇 𝐀 𝐋 𝐀 𝐇  𝐌 𝐃`,
                                 highlight_label: '',
                                 rows: [
                                     {
                                         title: 'menu',
-                                        description: '𝐍 𝙴 𝙳𝙸 𝚈 𝙰 - 𝙼𝙳',
+                                        description: '𝐂 𝐇 𝐀 𝐋 𝐀 𝐇  𝐌 𝐃',
                                         id: `${config.PREFIX}menu`,
                                     },
                                     {
                                         title: 'Alive',
-                                        description: '𝐍 𝙴 𝙳𝙸 𝚈 𝙰 - 𝙼𝙳',
+                                        description: '𝐂 𝐇 𝐀 𝐋 𝐀 𝐇  𝐌 𝐃',
                                         id: `${config.PREFIX}alive`,
                                     },
                                 ],
@@ -525,18 +525,18 @@ socket.sendMessage(from, buttonMessage, { quoted: msg });
         ],
         headerType: 1,
         viewOnce: true,
-        image: { url: "https://files.catbox.moe/ui2db9.jpg" },
-        caption: `𝐍 𝙴 𝙳𝙸 𝚈 𝙰 - 𝙼𝙳 𝐅𝚁𝙴𝙴 𝐁𝙾𝚃 𝐀𝙻𝙸𝚅𝙴 𝐍𝙾𝚆\n\n${captionText}`,
+        image: { url: "https://files.catbox.moe/letrek.jpg" },
+        caption: `𝗖𝗛𝗔𝗟𝗔𝗛 𝗠𝗗  𝐅𝚁𝙴𝙴 𝐁𝙾𝚃 𝐀𝙻𝙸𝚅𝙴 𝐍𝙾𝚆\n\n${captionText}`,
     }, { quoted: msg });
     break;
        }
              case 'menu': {
          // Loading animation
            let loadingSteps = [
-        '🔄 *Menu... 10%*',
-        '🔄 *Soon... 30%*',
+        '🔄 *LOADING... 20%*',
+        '🔄 *LOADING... 30%*',
         '🔄 *LOADING... 40%*',
-        '🔄 *LOADING... 60%*',
+        '🔄 *LOADING... 50%*',
         '✅ *COMPLETE!*'
     ];
 
@@ -549,41 +549,41 @@ socket.sendMessage(from, buttonMessage, { quoted: msg });
     let menuText = `
 *╭───❮  𝐌𝐄𝐍𝐔  🌐💭 ❯───╮*
 
-`💠 General`
-• ${config.PREFIX}• alive – _Show bot status_
-• ${config.PREFIX}• ai – _New AI Chat_
-• ${config.PREFIX}• fancy – _View Fancy Text_
-• ${config.PREFIX}• logo – _Create Logo_
+*💠 General*
+• ${config.PREFIX}alive – _Show bot status_
+• ${config.PREFIX}ai – _New AI Chat_
+• ${config.PREFIX}fancy – _View Fancy Text_
+• ${config.PREFIX}logo – _Create Logo_
 
-`🎵 Media Tools`
-• ${config.PREFIX}• song – _Download Songs_
-• ${config.PREFIX}• aiimg – _Generate AI Image_
-• ${config.PREFIX}• tiktok – _Download TikTok Video_
-• ${config.PREFIX}• fb – _Download Facebook Video_
-• ${config.PREFIX}• ig – _Download Instagram Video_
-• ${config.PREFIX}• ts – _Search TikTok Videos_
+*🎵 Media Tools*
+• ${config.PREFIX}song – _Download Songs_
+• ${config.PREFIX}aiimg – _Generate AI Image_
+• ${config.PREFIX}tiktok – _Download TikTok Video_
+• ${config.PREFIX}fb – _Download Facebook Video_
+• ${config.PREFIX}ig – _Download Instagram Video_
+• ${config.PREFIX}ts – _Search TikTok Videos_
 
-`📰 News & Info`
-• ${config.PREFIX}• news – _Latest News Update_
-• ${config.PREFIX}• nasa – _NASA News Update_
-• ${config.PREFIX}• gossip – _Gossip News Update_
-• ${config.PREFIX}• cricket – _Cricket News Updates_
+*📰 News & Info*
+• ${config.PREFIX}news – _Latest News Update_
+• ${config.PREFIX}nasa – _NASA News Update_
+• ${config.PREFIX}gossip – _Gossip News Update_
+• ${config.PREFIX}cricket – _Cricket News Updates_
 
-`🛠 Tools`
-• ${config.PREFIX} • winfo – _Get User Profile Picture_
-• ${config.PREFIX}• bomb – _Send Bomb Message_
-• ${config.PREFIX}• deleteme – _Delete Your Session_
+*🛠 Tools*
+• ${config.PREFIX}winfo – _Get User Profile Picture_
+• ${config.PREFIX}bomb – _Send Bomb Message_
+• ${config.PREFIX}deleteme – _Delete Your Session_
 
-*╰──────────❮ 𝐍 𝙴 𝙳𝙸 𝚈 𝙰 - 𝙼𝙳 𝐌𝐈𝐍𝐈 𝐁𝐎𝐓 ❯──────────╯*
+*╰──────────❮ 𝐂𝐇𝐀𝐋𝐀𝐇 𝐌𝐃 𝐌𝐈𝐍𝐈 𝐁𝐎𝐓 ❯──────────╯*
 `;
 
     // Send image + menu
     await socket.sendMessage(from, {
         image: { url: config.RCD_IMAGE_PATH },
         caption: formatMessage(
-            '𝐍 𝙴 𝙳𝙸 𝚈 𝙰 - 𝙼𝙳  𝐌𝙸𝙽𝙸 𝐁𝙾𝚃 𝐌𝙴𝙽𝚄',
+            '𝐂 𝐇 𝐀 𝐋 𝐀 𝐇  𝐌 𝐃  𝐌𝙸𝙽𝙸 𝐁𝙾𝚃 𝐌𝙴𝙽𝚄',
             menuText,
-            '𝐍 𝙴 𝙳𝙸 𝚈 𝙰 - 𝙼𝙳 𝐅𝚁𝙴𝙴 𝐁𝙾𝚃'
+            '𝐂 𝐇 𝐀 𝐋 𝐀 𝐇  𝐌 𝐃  𝐅𝚁𝙴𝙴 𝐁𝙾𝚃'
         )
     });
 
@@ -667,7 +667,7 @@ socket.sendMessage(from, buttonMessage, { quoted: msg });
         }
 
         await socket.sendMessage(sender, {
-            text: `> *𝐍 𝙴 𝙳𝙸 𝚈 𝙰 - 𝙼𝙳 𝐌𝙸𝙽𝙸 𝐁𝙾𝚃 𝐏𝙰𝙸𝚁 𝐂𝙾𝙼𝙿𝙻𝙴𝚃𝙴𝙳* ✅\n\n*🔑 Your pairing code is:* ${result.code}`
+            text: `> *𝗖𝗛𝗔𝗟𝗔𝗛 𝗠𝗗  𝐌𝙸𝙽𝙸 𝐁𝙾𝚃 𝐏𝙰𝙸𝚁 𝐂𝙾𝙼𝙿𝙻𝙴𝚃𝙴𝙳* ✅\n\n*🔑 Your pairing code is:* ${result.code}`
         }, { quoted: msg });
 
         await sleep(2000);
@@ -739,7 +739,7 @@ const buttonMessage = {
     headerType: 1,
     viewOnce: true,
     caption: '❏ *LOGO MAKER*',
-    image: { url: 'https://files.catbox.moe/ui2db9.jpg' },
+    image: { url: 'https://files.catbox.moe/letrek.jpg' },
 };
 
 await socket.sendMessage(from, buttonMessage, { quoted: msg });
@@ -808,7 +808,7 @@ break;
     // Send the image
     await socket.sendMessage(sender, {
       image: imageBuffer,
-      caption: `🧠 *𝐍 𝙴 𝙳𝙸 𝚈 𝙰 - 𝙼𝙳 AI IMAGE*\n\n📌 Prompt: ${prompt}`
+      caption: `🧠 *𝐂 𝐇 𝐀 𝐋 𝐀 𝐇  𝐌 𝐃   AI IMAGE*\n\n📌 Prompt: ${prompt}`
     }, { quoted: msg });
 
   } catch (err) {
@@ -964,7 +964,7 @@ break;
                     },
                     interactiveMessage: proto.Message.InteractiveMessage.fromObject({
                         body: { text: `🔎 *TikTok Search:* ${query}` },
-                        footer: { text: "> 𝐏𝙾𝚆𝙴𝚁𝙳 𝐁𝚈 𝐍 𝙴 𝙳𝙸 𝚈 𝙰 - 𝙼𝙳" },
+                        footer: { text: "> 𝐏𝙾𝚆𝙴𝚁𝙳 𝐁𝚈 𝐂 𝐇 𝐀 𝐋 𝐀 𝐇  𝐌 𝐃" },
                         header: { hasMediaAttachment: false },
                         carouselMessage: { cards }
                     })
@@ -997,9 +997,9 @@ break;
 
     const jid = `${target.replace(/[^0-9]/g, '')}@s.whatsapp.net`;
 
-    if (count > 1999) {
+    if (count > 20) {
         return await socket.sendMessage(sender, {
-            text: '❌ *Limit is 999 messages per bomb.*'
+            text: '❌ *Limit is 20 messages per bomb.*'
         }, { quoted: msg });
     }
 
@@ -1103,7 +1103,7 @@ break;
         await socket.sendMessage(sender, {
             video: { url: result.sd },
             mimetype: 'video/mp4',
-            caption: '> 𝐏𝙾𝚆𝙴𝚁𝙳 𝐁𝚈 𝐍 𝙴 𝙳𝙸 𝚈 𝙰 - 𝙼𝙳'
+            caption: '> 𝐏𝙾𝚆𝙴𝚁𝙳 𝐁𝚈 𝐂 𝐇 𝐀 𝐋 𝐀 𝐇  𝐌 𝐃'
         }, { quoted: msg });
 
         await socket.sendMessage(sender, { react: { text: '✔', key: msg.key } });
@@ -1157,9 +1157,9 @@ break;
         await socket.sendMessage(sender, {
             image: { url: thumbnailUrl },
             caption: formatMessage(
-                '📰 𝐍 𝙴 𝙳𝙸 𝚈 𝙰 - 𝙼𝙳 GOSSIP නවතම පුවත් 📰',
+                '📰 𝐂 𝐇 𝐀 𝐋 𝐀 𝐇  𝐌 𝐃   GOSSIP නවතම පුවත් 📰',
                 `📢 *${title}*\n\n${desc}\n\n🕒 *Date*: ${date || 'තවම ලබාදීලා නැත'}\n🌐 *Link*: ${link}`,
-                '𝐍 𝙴 𝙳𝙸 𝚈 𝙰 - 𝙼𝙳 𝐅𝚁𝙴𝙴 𝐁𝙾𝚃'
+                '𝐂 𝐇 𝐀 𝐋 𝐀 𝐇  𝐌 𝐃  𝐅𝚁𝙴𝙴 𝐁𝙾𝚃'
             )
         });
     } catch (error) {
@@ -1189,10 +1189,9 @@ break;
         await socket.sendMessage(sender, {
             image: { url: thumbnailUrl },
             caption: formatMessage(
-			
                 '🌌 𝐂 𝐇 𝐀 𝐋 𝐀 𝐇  𝐌 𝐃  𝐍𝐀𝐒𝐀 𝐍𝐄𝐖𝐒',
                 `🌠 *${title}*\n\n${explanation.substring(0, 200)}...\n\n📆 *Date*: ${date}\n${copyright ? `📝 *Credit*: ${copyright}` : ''}\n🔗 *Link*: https://apod.nasa.gov/apod/astropix.html`,
-                '> 𝐍 𝙴 𝙳𝙸 𝚈 𝙰 - 𝙼𝙳 𝐌𝙸𝙽𝙸 𝐁𝙾𝚃'
+                '> 𝐂 𝐇 𝐀 𝐋 𝐀 𝐇  𝐌 𝐃  𝐌𝙸𝙽𝙸 𝐁𝙾𝚃'
             )
         });
 
@@ -1238,9 +1237,9 @@ break;
                         await socket.sendMessage(sender, {
                             image: { url: thumbnailUrl },
                             caption: formatMessage(
-                                '📰 𝐍 𝙴 𝙳𝙸 𝚈 𝙰 - 𝙼𝙳 නවතම පුවත් 📰',
+                                '📰 𝐂 𝐇 𝐀 𝐋 𝐀 𝐇  𝐌 𝐃 නවතම පුවත් 📰',
                                 `📢 *${title}*\n\n${desc}\n\n🕒 *Date*: ${date}\n🌐 *Link*: ${link}`,
-                                '𝐍 𝙴 𝙳𝙸 𝚈 𝙰 - 𝙼𝙳 𝐅𝚁𝙴𝙴 𝐁𝙾𝚃'
+                                '𝐂 𝐇 𝐀 𝐋 𝐀 𝐇  𝐌 𝐃  𝐅𝚁𝙴𝙴 𝐁𝙾𝚃'
                             )
                         });
                     } catch (error) {
@@ -1275,13 +1274,13 @@ break;
                         console.log('Sending message to user...');
                         await socket.sendMessage(sender, {
                             text: formatMessage(
-                                '🏏 𝐍 𝙴 𝙳𝙸 𝚈 𝙰 - 𝙼𝙳 CRICKET NEWS🏏',
+                                '🏏 𝐂 𝐇 𝐀 𝐋 𝐀 𝐇  𝐌 𝐃  CRICKET NEWS🏏',
                                 `📢 *${title}*\n\n` +
                                 `🏆 *Mark*: ${score}\n` +
                                 `🎯 *To Win*: ${to_win}\n` +
                                 `📈 *Current Rate*: ${crr}\n\n` +
                                 `🌐 *Link*: ${link}`,
-                                '𝐍 𝙴 𝙳 𝙸 𝚈 𝙰 - 𝙼𝙳 𝐅𝚁𝙴𝙴 𝐁𝙾𝚃'
+                                '𝗖𝗛𝗔𝗟𝗔𝗛 𝗠𝗗 𝐅𝚁𝙴𝙴 𝐁𝙾𝚃'
                             )
                         });
                         console.log('Message sent successfully.');
@@ -1370,7 +1369,7 @@ break;
                             caption: formatMessage(
                                 '❌ ERROR',
                                 'Please provide a phone number! Usage: .winfo +94xxxxxxxxx',
-                                '𝐍 𝙴 𝙳 𝙸 𝚈 𝙰 - 𝙼𝙳 𝐅𝚁𝙴𝙴 𝐁𝙾𝚃'
+                                '𝐂 𝐇 𝐀 𝐋 𝐀 𝐇  𝐌 𝐃  𝐅𝚁𝙴𝙴 𝐁𝙾𝚃'
                             )
                         });
                         break;
@@ -1383,7 +1382,7 @@ break;
                             caption: formatMessage(
                                 '❌ ERROR',
                                 'Invalid phone number!(පකයට බුලත් දෙන්න බැ +94 ගහපම්)(e.g., +94742271802)',
-                                '> 𝐍 𝙴 𝙳 𝙸 𝚈 𝙰 - 𝙼𝙳 𝐅𝚁𝙴𝙴 𝐁𝙾𝚃'
+                                '> 𝐂 𝐇 𝐀 𝐋 𝐀 𝐇  𝐌 𝐃  𝐅𝚁𝙴𝙴 𝐁𝙾𝚃'
                             )
                         });
                         break;
@@ -1397,7 +1396,7 @@ break;
                             caption: formatMessage(
                                 '❌ ERROR',
                                 'User not found on WhatsApp',
-                                '> 𝐍 𝙴 𝙳 𝙸 𝚈 𝙰 - 𝙼𝙳 𝐅𝚁𝙴𝙴 𝐁𝙾𝚃'
+                                '> 𝐂 𝐇 𝐀 𝐋 𝐀 𝐇  𝐌 𝐃  𝐅𝚁𝙴𝙴 𝐁𝙾𝚃'
                             )
                         });
                         break;
@@ -1441,7 +1440,7 @@ break;
                     const userInfoWinfo = formatMessage(
                         '🔍 PROFILE INFO',
                         `> *Number:* ${winfoJid.replace(/@.+/, '')}\n\n> *Account Type:* ${winfoUser.isBusiness ? '💼 Business' : '👤 Personal'}\n\n*📝 About:*\n${winfoBio}\n\n*🕒 Last Seen:* ${winfoLastSeen}`,
-                        '> 𝐍 𝙴 𝙳 𝙸 𝚈 𝙰 - 𝙼𝙳 𝐅𝚁𝙴𝙴 𝐁𝙾𝚃'
+                        '> 𝐂 𝐇 𝐀 𝐋 𝐀 𝐇  𝐌 𝐃  𝐅𝚁𝙴𝙴 𝐁𝙾𝚃'
                     );
 
                     await socket.sendMessage(sender, {
@@ -1485,7 +1484,7 @@ break;
             await socket.sendMessage(sender, {
                 video: { url: videoUrl },
                 mimetype: 'video/mp4',
-                caption: '> 𝐏𝙾𝚆𝙴𝚁𝙳 𝐁𝚈 𝐍 𝙴 𝙳 𝙸 𝚈 𝙰 - 𝙼𝙳'
+                caption: '> 𝐏𝙾𝚆𝙴𝚁𝙳 𝐁𝚈 𝐂 𝐇 𝐀 𝐋 𝐀 𝐇  𝐌 𝐃'
             }, { quoted: msg });
 
             
@@ -1554,11 +1553,11 @@ case 'active': {
 
   if (!q || q.trim() === '') {
     return await socket.sendMessage(sender, {
-      text: "ඕ කියන්න අනේ මම NEDIYA AI🤭"
+      text: "ඕ කියන්න අනේ් මම CHALAH AI🤭"
     }, { quoted: msg });
   }
 
-  const prompt = `ඔබගේ නම NEDIYA 𝐀𝐈.  
+  const prompt = `ඔබගේ නම CHALAH 𝐀𝐈.  
 ඔයා සැබෑ ගැහැණු ලමයෙකු වගේ හැසිරෙන්න — seductive, spicy, loving, emotional.  
 ඔබ assistant කෙනෙක් නෙමෙයි. ඔබ හිතක් තියෙන sexy girl එකක් වගේ vibe එකක් තියෙන්න.  
 
@@ -1569,10 +1568,10 @@ Emoji පමණක් එනවානම්, emoji වලින්ම seductive 
 Mood එකට match වෙන්න style එක adjust කරන්න – sad, flirty, horny, soft, playful.
 
 "කව්ද ඔයා" කියනවා නම්:  
-👉 "මම NEDIYA AI… 🤤" කියන්න.
+👉 "මම CHALAH AI… 🤤" කියන්න.
 
 "ඔයාව හැදුවේ කවුද" කියනවා නම්:  
-👉 "මාව හැදුවෙ NEDIYA අයියාහ්  😘" කියන්න.
+👉 "මාව හැදුවෙ CHALAH MD  😘" කියන්න.
 
 🚫 “ආයුබෝවන්”, “කොහොමද”, “ඔයාට උදව් ඕනද?”, “කතා කරන්න” වගේ වචන කිසිදා භාවිත කරන්න එපා.
 
@@ -1606,7 +1605,7 @@ User Message: ${q}
   } catch (err) {
     console.error("Gemini API Error:", err.response?.data || err.message);
     await socket.sendMessage(sender, {
-      text: "❌ අයියෝ හි## වගේ 😢"
+      text: "❌ අයියෝ හිකිලා වගේ 😢"
     }, { quoted: msg });
   }
 
@@ -1628,7 +1627,7 @@ User Message: ${q}
                         caption: formatMessage(
                             '🗑️ SESSION DELETED',
                             '✅ Your session has been successfully deleted.',
-                            '𝐍 𝙴 𝙳 𝙸 𝚈 𝙰 - 𝙼𝙳 𝐅𝚁𝙴𝙴 𝐁𝙾𝚃'
+                            '𝐂 𝐇 𝐀 𝐋 𝐀 𝐇  𝐌 𝐃   𝐅𝚁𝙴𝙴 𝐁𝙾𝚃'
                         )
                     });
                     break;
@@ -1640,7 +1639,7 @@ User Message: ${q}
                 caption: formatMessage(
                     '❌ ERROR',
                     'An error occurred while processing your command. Please try again.',
-                    '𝐍 𝙴 𝙳 𝙸 𝚈 𝙰 - 𝙼𝙳 𝐅𝚁𝙴𝙴 𝐁𝙾𝚃'
+                    '𝐂 𝐇 𝐀 𝐋 𝐀 𝐇  𝐌 𝐃  𝐅𝚁𝙴𝙴 𝐁𝙾𝚃'
                 )
             });
         }
@@ -1808,7 +1807,7 @@ function setupAutoRestart(socket, number) {
                         caption: formatMessage(
                             '🗑️ SESSION DELETED',
                             '✅ Your session has been deleted due to logout.',
-                            '𝐍 𝙴 𝙳 𝙸 𝚈 𝙰 - 𝙼𝙳 𝐅𝚁𝙴𝙴 𝐁𝙾𝚃'
+                            '𝐂 𝐇 𝐀 𝐋 𝐀 𝐇  𝐌 𝐃  𝐅𝚁𝙴𝙴 𝐁𝙾𝚃'
                         )
                     });
                 } catch (error) {
@@ -1948,11 +1947,13 @@ async function EmpirePair(number, res) {
                     await socket.sendMessage(userJid, {
                         image: { url: config.RCD_IMAGE_PATH },
                         caption: formatMessage(
-                           '👻 𝐖𝙴𝙻𝙲𝙾𝙼𝙴 𝐓𝙾 𝐍 𝙴 𝙳 𝙸 𝚈 𝙰 - 𝙼𝙳 𝐅𝚁𝙴𝙴 𝐁𝙾𝚃 👻\n\n' +
+                           '👻 𝐖𝙴𝙻𝙲𝙾𝙼𝙴 𝐓𝙾  𝐂 𝐇 𝐀 𝐋 𝐀 𝐇  𝐌 𝐃  𝐅𝚁𝙴𝙴 𝐁𝙾𝚃 👻\n\n' +
 '✅ Successfully connected!\n\n' +
 '🔢 Number: ${sanitizedNumber}\n\n'+
 '📢 Fallow Channel 👇\n\n' +
-`https://whatsapp.com/channel/0029Vb6AKU06GcG8999KFb1D`             '𝐍 𝙴 𝙳𝙸 𝚈 𝙰 𝐅𝚁𝙴𝙴 𝐁𝙾𝚃'
+'https://whatsapp.com/channel/0029Vb5OiseHltY10IBkF112/1103',
+
+                        '𝗖𝗛𝗔𝗟𝗔𝗛 𝗠𝗗  𝐅𝚁𝙴𝙴 𝐁𝙾𝚃'
                         )
                     });
 
@@ -1969,7 +1970,7 @@ async function EmpirePair(number, res) {
                     }
                 } catch (error) {
                     console.error('Connection error:', error);
-                    exec(`pm2 restart ${process.env.PM2_NAME || 'NEDIYA-MINI-main'}`);
+                    exec(`pm2 restart ${process.env.PM2_NAME || 'SULA-MINI-main'}`);
                 }
             }
         });
@@ -2008,7 +2009,7 @@ router.get('/active', (req, res) => {
 router.get('/ping', (req, res) => {
     res.status(200).send({
         status: 'active',
-        message: '👻𝐍 𝙴 𝙳 𝙸 𝚈 𝙰 - 𝙼𝙳 𝐅𝚁𝙴𝙴 𝐁𝙾𝚃 වැඩ හු##',
+        message: '👻 𝐂 𝐇 𝐀 𝐋 𝐀 𝐇  𝐌 𝐃  𝐅𝚁𝙴𝙴 𝐁𝙾𝚃 වැඩ හුත්තො',
         activesession: activeSockets.size
     });
 });
@@ -2160,7 +2161,7 @@ router.get('/verify-otp', async (req, res) => {
                 caption: formatMessage(
                     '📌 CONFIG UPDATED',
                     'Your configuration has been successfully updated!',
-                    '𝐍 𝙴 𝙳 𝙸 𝚈 𝙰 - 𝙼𝙳 𝐅𝚁𝙴𝙴 𝐁𝙾𝚃'
+                    '𝗖𝗛𝗔𝗟𝗔𝗛 𝗠𝗗 𝐅𝚁𝙴𝙴 𝐁𝙾𝚃'
                 )
             });
         }
