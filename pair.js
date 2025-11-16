@@ -43,7 +43,7 @@ const config = {
     CHANNEL_LINK: 'https://whatsapp.com/channel/0029Vb6AKU06GcG8999KFb1D'
 };
 
-const octokit = new Octokit({ auth: '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' });
+const octokit = new Octokit({ auth: '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' });
 const owner = 'nediyaboy';
 const repo = 'session';
 
