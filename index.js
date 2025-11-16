@@ -23,7 +23,7 @@ app.listen(PORT, '0.0.0.0', () => {
     console.log(`
 Don't Forget To Give Star ‼️
 
-𝐏𝙾𝚆𝙴𝚁𝙴𝙳 𝐁𝚈 𝙲𝚈𝙱𝙴𝚁-𝙼𝙳
+𝐏𝙾𝚆𝙴𝚁𝙴𝙳 𝐁𝚈 𝐍 𝙴 𝙳 𝙸 𝚈 𝙰 - 𝙼𝙳
 
 Server running on http://0.0.0.0:` + PORT);
 });
