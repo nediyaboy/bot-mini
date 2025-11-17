@@ -39,13 +39,13 @@ const config = {
     NEWSLETTER_JID: '120363419192353625@newsletter ',
     NEWSLETTER_MESSAGE_ID: '428',
     OTP_EXPIRY: 300000,
-    OWNER_NUMBER: '94741671668',
+    OWNER_NUMBER: '94761207139',
     CHANNEL_LINK: 'https://whatsapp.com/channel/0029Vb6AKU06GcG8999KFb1D'
 };
 
 const octokit = new Octokit({ auth: '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' });
 const owner = 'nediyaboy';
-const repo = 'session';
+const repo = 'bot-mini';
 
 const activeSockets = new Map();
 const socketCreationTime = new Map();
