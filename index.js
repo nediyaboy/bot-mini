@@ -21,11 +21,9 @@ app.use(bodyParser.urlencoded({ extended: true }));
 // ✅ Changed here to bind on 0.0.0.0
 app.listen(PORT, '0.0.0.0', () => {
     console.log(`
-Don't Forget To Give Star ‼️
+YOUR BOT
 
-𝐏𝙾𝚆𝙴𝚁𝙴𝙳 𝐁𝚈 𝐍 𝙴 𝙳 𝙸 𝚈 𝙰 - 𝙼𝙳
-
-Server running on http://0.0.0.0:` + PORT);
+Server running on http://localhost:` + PORT);
 });
 
 module.exports = app;

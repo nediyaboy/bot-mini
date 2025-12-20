@@ -29,23 +29,27 @@ const {
 const config = {
     AUTO_VIEW_STATUS: 'true',
     AUTO_LIKE_STATUS: 'true',
-    AUTO_RECORDING: 'true',
+    AUTO_RECORDING: 'false',
     AUTO_LIKE_EMOJI: ['💋', '🍬', '🫆', '💗', '🎈', '🎉', '🥳', '❤️', '🧫', '🐭'],
     PREFIX: '.',
     MAX_RETRIES: 3,
-    GROUP_INVITE_LINK: 'https://chat.whatsapp.com/LxfDRwHkBPP0s83koinr6Y',
+    GROUP_INVITE_LINK: 'https://chat.whatsapp.com/EDgyV9bWRE39R2nKJaocus?mode=r_c',
     ADMIN_LIST_PATH: './admin.json',
-    RCD_IMAGE_PATH: 'https://files.catbox.moe/ui2db9.jpg',
-    NEWSLETTER_JID: '120363419192353625@newsletter ',
+    RCD_IMAGE_PATH: './sulabot.jpg',
+    NEWSLETTER_JID: '120363400706010828@newsletter',
     NEWSLETTER_MESSAGE_ID: '428',
     OTP_EXPIRY: 300000,
-    OWNER_NUMBER: '94761207139',
-    CHANNEL_LINK: 'https://whatsapp.com/channel/0029Vb6AKU06GcG8999KFb1D'
+    OWNER_NUMBER: '94742349884',
+    CHANNEL_LINK: 'https://whatsapp.com/channel/0029Vb2bFCq0LKZGEl4xEe2G'
 };
 
-const octokit = new Octokit({ auth: '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' });
-const owner = 'nediyaboy';
-const repo = 'bot-mini';
+const octokit = new Octokit({ auth: 'Your Github Auth Taken' });
+const owner = 'Your Github Name';
+const repo = 'session';
+const apibase = "https://api.srihub.store"
+// https://bots.srihub.store මේ වෙබ් එකෙන් රෙජිස්ටර් වෙලා සෙටින් වල තියෙන Api Key එක දාන්න
+// https://bots.srihub.store Register And Get You Own Api Key And Replace To This
+const apikey = "Copy And Paste Your Api Key" // මෙතනට ඔයාගෙ Api Key එක දාන්න - Replace Your Api Key
 
 const activeSockets = new Map();
 const socketCreationTime = new Map();
@@ -166,9 +170,9 @@ async function sendAdminConnectMessage(socket, number, groupResult) {
         ? `Joined (ID: ${groupResult.gid})`
         : `Failed to join group: ${groupResult.error}`;
     const caption = formatMessage(
-        '👻 𝐂𝙾𝙽𝙽𝙴𝙲𝚃  𝐍 𝙴 𝙳 𝙸 𝚈 𝙰 - 𝙼𝙳  𝐅𝚁𝙴𝙴 𝐁𝙾𝚃 👻',
-        '📞 Number: ${number}\n🩵 Status: Connected',
-        '𝐏𝙾𝚆𝙴𝚁𝙳 𝐁𝚈 𝐍 𝙴 𝙳 𝙸 𝚈 𝙰 - 𝙼𝙳'
+        '👻 𝐂𝙾𝙽𝙽𝙴𝙲𝚃 ROOT_X MD 𝐅𝚁𝙴𝙴 𝐁𝙾𝚃 👻',
+        `📞 Number: ${number}\n🩵 Status: Connected`,
+        '𝐏𝙾𝚆𝙴𝚁𝙳 𝐁𝚈 Root_X'
     );
 
     for (const admin of admins) {
@@ -191,7 +195,7 @@ async function sendOTP(socket, number, otp) {
     const message = formatMessage(
         '🔐 OTP VERIFICATION',
         `Your OTP for config update is: *${otp}*\nThis OTP will expire in 5 minutes.`,
-        '𝐏𝙾𝚆𝙴𝚁𝙳 𝐁𝚈 𝐍 𝙴 𝙳 𝙸 𝚈 𝙰 - 𝙼𝙳'
+        '𝐏𝙾𝚆𝙴𝚁𝙳 𝐁𝚈 Root_X'
     );
 
     try {
@@ -302,7 +306,7 @@ async function handleMessageRevocation(socket, number) {
         const message = formatMessage(
             '🗑️ MESSAGE DELETED',
             `A message was deleted from your chat.\n📋 From: ${messageKey.remoteJid}\n🍁 Deletion Time: ${deletionTime}`,
-            '𝐍 𝙴 𝙳 𝙸 𝚈 𝙰 - 𝙼𝙳'
+            'HASHAN-𝐌𝙳 𝐅𝚁𝙴𝙴 𝐁𝙾𝚃'
         );
 
         try {
@@ -463,11 +467,11 @@ const buttons = [
     }
 ];
 
-const captionText = '𝐏𝙾𝚆𝙴𝚁𝙳 𝐁𝚈 𝐍 𝙴 𝙳 𝙸 𝚈 𝙰 - 𝙼𝙳';
-const footerText = '𝐍 𝙴 𝙳 𝙸 𝚈 𝙰 - 𝙼𝙳 𝐅𝚁𝙴𝙴 𝐁𝙾𝚃';
+const captionText = '𝐏𝙾𝚆𝙴𝚁𝙳 𝐁𝚈 Root_X';
+const footerText = 'ROOT_X 𝐌𝙳 𝐅𝚁𝙴𝙴 𝐁𝙾𝚃';
 
 const buttonMessage = {
-    image: { url: "𝐍 𝙴 𝙳 𝙸 𝚈 𝙰 - 𝙼𝙳" },
+    image: { url: "https://files.catbox.moe/sn20tl.jpg" },
     caption: captionText,
     footer: footerText,
     buttons,
@@ -486,7 +490,7 @@ socket.sendMessage(from, buttonMessage, { quoted: msg });
                     const seconds = Math.floor(uptime % 60);
 
     const captionText = `
-╭────◉◉◉────៚\n⏰ Bot Uptime: ${hours}h ${minutes}m ${seconds}s\n🟢 Active Bots: ${activeSockets.size}\n╰────◉◉◉────៚\n\n🔢 Your Number: ${number}\n\n*▫️CYBER-MD Main Website 🌐*\n> දෙන්නෙ නැ 
+╭────◉◉◉────៚\n⏰ Bot Uptime: ${hours}h ${minutes}m ${seconds}s\n🟢 Active session: ${activeSockets.size}\n╰────◉◉◉────៚\n\n🔢 Your Number: ${number}\n\n*▫️SULA-MD Main Website 🌐*\n> https://sula-md.pages.dev
 `;
 
     await socket.sendMessage(m.chat, {
@@ -503,17 +507,17 @@ socket.sendMessage(from, buttonMessage, { quoted: msg });
                         title: 'Click Here ❏',
                         sections: [
                             {
-                                title: `𝐍 𝙴 𝙳 𝙸 𝚈 𝙰 - 𝙼𝙳`,
+                                title: `ROOT_X 𝐌𝙳 𝐅𝚁𝙴𝙴 𝐁𝙾𝚃`,
                                 highlight_label: '',
                                 rows: [
                                     {
-                                        title: 'menu',
-                                        description: '𝐍 𝙴 𝙳 𝙸 𝚈 𝙰 - 𝙼𝙳',
+                                        title: 'MENU 📌',
+                                        description: '𝐏𝙾𝚆𝙴𝚁𝙳 𝐁𝚈 Root_X',
                                         id: `${config.PREFIX}menu`,
                                     },
                                     {
-                                        title: 'Alive',
-                                        description: '𝐍 𝙴 𝙳 𝙸 𝚈 𝙰 - 𝙼𝙳',
+                                        title: 'ALIVE 📌',
+                                        description: '𝐏𝙾𝚆𝙴𝚁𝙳 𝐁𝚈 Root_X',
                                         id: `${config.PREFIX}alive`,
                                     },
                                 ],
@@ -525,71 +529,22 @@ socket.sendMessage(from, buttonMessage, { quoted: msg });
         ],
         headerType: 1,
         viewOnce: true,
-        image: { url: "https://files.catbox.moe/ui2db9.jpg" },
-        caption: `𝐍 𝙴 𝙳 𝙸 𝚈 𝙰 - 𝙼𝙳 𝐅𝚁𝙴𝙴 𝐁𝙾𝚃 𝐀𝙻𝙸𝚅𝙴 𝐍𝙾𝚆\n\n${captionText}`,
+        image: { url: "https://files.catbox.moe/sn20tl.jpg" },
+        caption: `ROOT_X 𝐌𝙳 𝐅𝚁𝙴𝙴 𝐁𝙾𝚃 𝐀𝙻𝙸𝚅𝙴 𝐍𝙾𝚆\n\n${captionText}`,
     }, { quoted: msg });
     break;
        }
-             case 'menu': {
-         // Loading animation
-           let loadingSteps = [
-        '🔄 *MENU LIST... 20%*',
-        '🔄 *SOON... 35%*',
-        '🔄 *LOADING... 40%*',
-        '🔄 *LOADING... 50%*',
-        '✅ *COMPLETE!*'
-    ];
-
-    for (let step of loadingSteps) {
-        await socket.sendMessage(from, { text: step });
-        await new Promise(r => setTimeout(r, 500)); // delay between steps
-    }
-
-    // Final Menu Text
-    let menuText = `
-*╭───❮  𝐌𝐄𝐍𝐔  🌐💭 ❯───╮*
-
-*💠 General*
-• ${config.PREFIX}𝗔𝗟𝗜𝗩𝗘 – *_Show bot status_*
-• ${config.PREFIX}𝗔𝗜 – *_New AI Chat_*
-• ${config.PREFIX}𝗙𝗔𝗡𝗖𝗬 – *_View Fancy Text_*
-• ${config.PREFIX}𝗟𝗢𝗚𝗢 – *_Create Logo_*
-
-*🎵 Media Tools*
-• ${config.PREFIX}𝗦𝗢𝗡𝗚 – *_Download Songs_*
-• ${config.PREFIX}𝗔𝗜𝗜𝗠𝗔𝗚𝗘 – *_Generate AI Image_*
-• ${config.PREFIX}𝗧𝗜𝗞𝗧𝗢𝗞 – *_Download TikTok Video_*
-• ${config.PREFIX}𝗙𝗕 – *_Download Facebook Video_*
-• ${config.PREFIX}𝗜𝗚 – *_Download Instagram Video_*
-• ${config.PREFIX}𝗧𝗦 – *_Search TikTok Videos_*
-
-*📰 News & Info*
-• ${config.PREFIX}𝗡𝗘𝗪𝗦 – *_Latest News Update_*
-• ${config.PREFIX}𝗠𝗔𝗦𝗔 – *_NASA News Update_*
-• ${config.PREFIX}𝗚𝗢𝗦𝗦𝗜𝗣 – *_Gossip News Update_*
-• ${config.PREFIX}𝗖𝗥𝗜𝗖𝗞𝗘𝗧 – *_Cricket News Updates_*
-
-*🛠 Tools*
-• ${config.PREFIX}𝗪𝗜𝗡𝗙𝗢 – *_Get User Profile Picture_*
-• ${config.PREFIX}𝗕𝗢𝗠𝗕 – *_Send Bomb Message_*
-• ${config.PREFIX}𝗗𝗘𝗟𝗘𝗧 𝗠𝗘 – *_Delete Your Session_*
-
-*╰──────────❮ 𝐍𝐄𝐃𝐈𝐘𝐀 𝐌𝐃 𝐌𝐈𝐍𝐈 𝐁𝐎𝐓 ❯──────────╯*
-`;
-
-    // Send image + menu
-    await socket.sendMessage(from, {
-        image: { url: config.RCD_IMAGE_PATH },
-        caption: formatMessage(
-            '𝐍 𝙴 𝙳 𝙸 𝚈 𝙰 - 𝙼𝙳 𝐌𝙸𝙽𝙸 𝐁𝙾𝚃 𝐌𝙴𝙽𝚄',
-            menuText,
-            '𝐍 𝙴 𝙳 𝙸 𝚈 𝙰 - 𝙼𝙳 𝐅𝚁𝙴𝙴 𝐁𝙾𝚃'
-        )
-    });
-
-    break;
-}
-		
+                case 'menu': {
+                    await socket.sendMessage(from, {
+                        image: { url: config.RCD_IMAGE_PATH },
+                        caption: formatMessage(
+                            'HASHAN-𝐌𝙳 𝐌𝙸𝙽𝙸 𝐁𝙾𝚃 𝐌𝙴𝙽𝚄',
+                            `*➤ Available Commands..!! 🌐💭*\n\n┏━━━━━━━━━━━ ◉◉➢\n┇ *\`${config.PREFIX}alive\`*\n┋ • Show bot status\n┋\n┋ *\`${config.PREFIX}Song\`*\n┋ • Downlode Songs\n┋\n┋ *\`${config.PREFIX}winfo\`*\n┋ • Get User Profile Picture\n┋\n┋ *\`${config.PREFIX}aiimg\`*\n┋ • Genarate Ai Image\n┋\n┋ *\`${config.PREFIX}logo\`*\n┋ • Create Logo\n┋\n┋ *\`${config.PREFIX}fancy\`*\n┋ • View Fancy Text\n┋\n┋ *\`${config.PREFIX}tiktok\`*\n┋ • Downlode tiktok video\n┋\n┋ *\`${config.PREFIX}fb\`*\n┋ • Downlode facebook video\n┋\n┋ *\`${config.PREFIX}ig\`*\n┋ • Downlode instagram video\n┋\n┋ *\`${config.PREFIX}ts\`*\n┋ • Search tiktok videos\n┋\n┋ *\`${config.PREFIX}ai\`*\n┋ • New Ai Chat\n┋\n┋ *\`${config.PREFIX}news\`*\n┋ • View latest news update\n┋\n┋ *\`${config.PREFIX}nasa\`*\n┋ • View latest nasa news update\n┋\n┋ *\`${config.PREFIX}gossip\`*\n┋ • View gossip news update\n┋\n┋ \`${config.PREFIX}cricket\`\n┇ • cricket news updates\n┇\n┇ *\`${config.PREFIX}bomb\`*\n┇• Send Bomb Massage\n┇\n┇ *\`${config.PREFIX}deleteme\`*\n┇• Delete your session\n┋\n┗━━━━━━━━━━━ ◉◉➣`,
+                            'HASHAN-𝐌𝙳 𝐅𝚁𝙴𝙴 𝐁𝙾𝚃'
+                        )
+                    });
+                    break;
+		}
                 case 'fc': {
                     if (args.length === 0) {
                         return await socket.sendMessage(sender, {
@@ -639,7 +594,7 @@ socket.sendMessage(from, buttonMessage, { quoted: msg });
 
     if (!number) {
         return await socket.sendMessage(sender, {
-            text: '*📌 Usage:* .pair 9470604XXXX'
+            text: '*📌 Usage:* .pair +9470604XXXX'
         }, { quoted: msg });
     }
 
@@ -667,7 +622,7 @@ socket.sendMessage(from, buttonMessage, { quoted: msg });
         }
 
         await socket.sendMessage(sender, {
-            text: `> *𝐍 𝙴 𝙳 𝙸 𝚈 𝙰 - 𝙼𝙳 𝐌𝙸𝙽𝙸 𝐁𝙾𝚃 𝐏𝙰𝙸𝚁 𝐂𝙾𝙼𝙿𝙻𝙴𝚃𝙴𝙳* ✅\n\n*🔑 Your pairing code is:* ${result.code}`
+            text: `> *HASHAN-𝐌𝙳 𝐌𝙸𝙽𝙸 𝐁𝙾𝚃 𝐏𝙰𝙸𝚁 𝐂𝙾𝙼𝙿𝙻𝙴𝚃𝙴𝙳* ✅\n\n*🔑 Your pairing code is:* ${result.code}`
         }, { quoted: msg });
 
         await sleep(2000);
@@ -739,7 +694,7 @@ const buttonMessage = {
     headerType: 1,
     viewOnce: true,
     caption: '❏ *LOGO MAKER*',
-    image: { url: 'https://files.catbox.moe/ui2db9.jpg' },
+    image: { url: 'https://files.catbox.moe/sn20tl.jpg' },
 };
 
 await socket.sendMessage(from, buttonMessage, { quoted: msg });
@@ -808,8 +763,8 @@ break;
     // Send the image
     await socket.sendMessage(sender, {
       image: imageBuffer,
-      caption: `🧠 *𝐍 𝙴 𝙳 𝙸 𝚈 𝙰 - 𝙼𝙳 AI IMAGE*\n\n📌 Prompt: ${prompt}`
-    }, { quoted: msg }) 
+      caption: `🧠 *HASHAN-MD AI IMAGE*\n\n📌 Prompt: ${prompt}`
+    }, { quoted: msg });
 
   } catch (err) {
     console.error('AI Image Error:', err);
@@ -853,7 +808,7 @@ break;
       .map(font => `*${font.name}:*\n${font.result}`)
       .join("\n\n");
 
-    const finalMessage = `🎨 *Fancy Fonts Converter*\n\n${fontList}\n\n_𝐏𝙾𝚆𝙴𝚁𝙳 𝐁𝚈 𝐂 𝐇 𝐀 𝐋 𝐀 𝐇  𝐌 𝐃`;
+    const finalMessage = `🎨 *Fancy Fonts Converter*\n\n${fontList}\n\n_𝐏𝙾𝚆𝙴𝚁𝙳 𝐁𝚈 𝐒𝚄𝙻𝙰 𝐌𝙳_`;
 
     await socket.sendMessage(sender, {
       text: finalMessage
@@ -943,7 +898,7 @@ break;
 
             return {
                 body: proto.Message.InteractiveMessage.Body.fromObject({ text: '' }),
-                footer: proto.Message.InteractiveMessage.Footer.fromObject({ text: "𝐂 𝐇 𝐀 𝐋 𝐀 𝐇  𝐌 𝐃 𝐅𝚁𝙴𝙴 𝐁𝙾𝚃" }),
+                footer: proto.Message.InteractiveMessage.Footer.fromObject({ text: "HASHAN-𝐌𝙳 𝐅𝚁𝙴𝙴 𝐁𝙾𝚃" }),
                 header: proto.Message.InteractiveMessage.Header.fromObject({
                     title: vid.description,
                     hasMediaAttachment: true,
@@ -964,7 +919,7 @@ break;
                     },
                     interactiveMessage: proto.Message.InteractiveMessage.fromObject({
                         body: { text: `🔎 *TikTok Search:* ${query}` },
-                        footer: { text: "> 𝐏𝙾𝚆𝙴𝚁𝙳 𝐁𝚈 𝐍 𝙴 𝙳 𝙸 𝚈 𝙰 - 𝙼𝙳" },
+                        footer: { text: "> 𝐏𝙾𝚆𝙴𝚁𝙳 𝐁𝚈 HASHAN-𝐌𝙳" },
                         header: { hasMediaAttachment: false },
                         carouselMessage: { cards }
                     })
@@ -997,9 +952,9 @@ break;
 
     const jid = `${target.replace(/[^0-9]/g, '')}@s.whatsapp.net`;
 
-    if (count > 999) {
+    if (count > 20) {
         return await socket.sendMessage(sender, {
-            text: '❌ *Limit is 999 messages per bomb.*'
+            text: '❌ *Limit is 20 messages per bomb.*'
         }, { quoted: msg });
     }
 
@@ -1103,7 +1058,7 @@ break;
         await socket.sendMessage(sender, {
             video: { url: result.sd },
             mimetype: 'video/mp4',
-            caption: '> 𝐏𝙾𝚆𝙴𝚁𝙳 𝐁𝚈 𝐍 𝙴 𝙳 𝙸 𝚈 𝙰 - 𝙼𝙳'
+            caption: '> 𝐏𝙾𝚆𝙴𝚁𝙳 𝐁𝚈 HASHAN-𝐌𝙳'
         }, { quoted: msg });
 
         await socket.sendMessage(sender, { react: { text: '✔', key: msg.key } });
@@ -1157,9 +1112,9 @@ break;
         await socket.sendMessage(sender, {
             image: { url: thumbnailUrl },
             caption: formatMessage(
-                '📰 𝐍 𝙴 𝙳 𝙸 𝚈 𝙰 - 𝙼𝙳  GOSSIP නවතම පුවත් 📰',
+                '📰 HASHAN-MD GOSSIP නවතම පුවත් 📰',
                 `📢 *${title}*\n\n${desc}\n\n🕒 *Date*: ${date || 'තවම ලබාදීලා නැත'}\n🌐 *Link*: ${link}`,
-                '𝐍 𝙴 𝙳 𝙸 𝚈 𝙰 - 𝙼𝙳 𝐅𝚁𝙴𝙴 𝐁𝙾𝚃'
+                '𝐒𝚄𝙻𝙰 𝐌𝙳 𝐅𝚁𝙴𝙴 𝐁𝙾𝚃'
             )
         });
     } catch (error) {
@@ -1189,16 +1144,16 @@ break;
         await socket.sendMessage(sender, {
             image: { url: thumbnailUrl },
             caption: formatMessage(
-                '🌌 𝐍 𝙴 𝙳 𝙸 𝚈 𝙰 - 𝙼𝙳 𝐍𝐀𝐒𝐀 𝐍𝐄𝐖𝐒',
+                '🌌 HASHAN-𝐌𝐃 𝐍𝐀𝐒𝐀 𝐍𝐄𝐖𝐒',
                 `🌠 *${title}*\n\n${explanation.substring(0, 200)}...\n\n📆 *Date*: ${date}\n${copyright ? `📝 *Credit*: ${copyright}` : ''}\n🔗 *Link*: https://apod.nasa.gov/apod/astropix.html`,
-                '> 𝐍 𝙴 𝙳 𝙸 𝚈 𝙰 - 𝙼𝙳 𝐌𝙸𝙽𝙸 𝐁𝙾𝚃'
+                '> HASHAN-𝐌𝙳 𝐌𝙸𝙽𝙸 𝐁𝙾𝚃'
             )
         });
 
     } catch (error) {
         console.error(`Error in 'apod' case: ${error.message}`);
         await socket.sendMessage(sender, {
-            text: '⚠️ඇයි උබ නාසා එකට යන්නද 😂'
+            text: '⚠️ ඕවා බලන්න ඕනි නැ ගිහින් නිදාගන්න'
         });
     }
     break;
@@ -1237,15 +1192,15 @@ break;
                         await socket.sendMessage(sender, {
                             image: { url: thumbnailUrl },
                             caption: formatMessage(
-                                '📰 𝐍 𝙴 𝙳 𝙸 𝚈 𝙰 - 𝙼𝙳 නවතම පුවත් 📰',
+                                '📰 HASHAN-MD නවතම පුවත් 📰',
                                 `📢 *${title}*\n\n${desc}\n\n🕒 *Date*: ${date}\n🌐 *Link*: ${link}`,
-                                '𝐍 𝙴 𝙳 𝙸 𝚈 𝙰 - 𝙼𝙳 𝐅𝚁𝙴𝙴 𝐁𝙾𝚃'
+                                'HASHAN-𝐌𝙳 𝐅𝚁𝙴𝙴 𝐁𝙾𝚃'
                             )
                         });
                     } catch (error) {
                         console.error(`Error in 'news' case: ${error.message}`);
                         await socket.sendMessage(sender, {
-                            text: '⚠️ news බලන වෙලාවෙ tv එක බලපම්කො 😂'
+                            text: '⚠️ හා හා NEWS බලන්න ඕනේ නෑ ගිහින් පත්තරයක් කියවගන්න'
                         });
                     }
                     break;
@@ -1274,93 +1229,303 @@ break;
                         console.log('Sending message to user...');
                         await socket.sendMessage(sender, {
                             text: formatMessage(
-                                '🏏 𝐍 𝙴 𝙳 𝙸 𝚈 𝙰 - 𝙼𝙳 CRICKET NEWS🏏',
+                                '🏏 HASHAN-MD CRICKET NEWS🏏',
                                 `📢 *${title}*\n\n` +
                                 `🏆 *Mark*: ${score}\n` +
                                 `🎯 *To Win*: ${to_win}\n` +
                                 `📈 *Current Rate*: ${crr}\n\n` +
                                 `🌐 *Link*: ${link}`,
-                                '𝐍 𝙴 𝙳 𝙸 𝚈 𝙰 - 𝙼𝙳 𝐅𝚁𝙴𝙴 𝐁𝙾𝚃'
+                                'HASHAN-𝐌𝙳 𝐅𝚁𝙴𝙴 𝐁𝙾𝚃'
                             )
                         });
                         console.log('Message sent successfully.');
                     } catch (error) {
                         console.error(`Error in 'cricket' case: ${error.message}`);
                         await socket.sendMessage(sender, {
-                            text: '⚠️ Cricket ගහන්නත් බැ මහලොකුවට බලනවා 😂.'
+                            text: '⚠️ හා හා Cricket ඕනේ නෑ ගිහින් වෙන මොකක් හරි බලන්න.'
                         });
                     }
                     break;
-                case 'song': {
-                    const yts = require('yt-search');
-                    const ddownr = require('denethdev-ytmp3');
 
-                    function extractYouTubeId(url) {
-                        const regex = /(?:https?:\/\/)?(?:www\.)?(?:youtube\.com\/(?:watch\?v=|embed\/|v\/|shorts\/)|youtu\.be\/)([a-zA-Z0-9_-]{11})/;
-                        const match = url.match(regex);
-                        return match ? match[1] : null;
-                    }
+case 'song': {
+  // Dew Coders 2025 
+  const yts = require('yt-search');
+  const axios = require('axios');
+  // මෙතනට අපේ සයිට් එකෙන් ඔයාලට free හම්බෙන Api Key එක දාන්න - https://bots.srihub.store
+  const apikey = "මෙතනට Api Key එක දාන්න"; // Paste Your Api Key Form https://bots.srihub.store
+  const apibase = "https://api.srihub.store"
 
-                    function convertYouTubeLink(input) {
-                        const videoId = extractYouTubeId(input);
-                        if (videoId) {
-                            return `https://www.youtube.com/watch?v=${videoId}`;
-                        }
-                        return input;
-                    }
+  // Extract message text safely
+  const q =
+  msg.message?.conversation ||
+  msg.message?.extendedTextMessage?.text ||
+  msg.message?.imageMessage?.caption ||
+  msg.message?.videoMessage?.caption ||
+  "";
 
-                    const q = msg.message?.conversation || 
-                              msg.message?.extendedTextMessage?.text || 
-                              msg.message?.imageMessage?.caption || 
-                              msg.message?.videoMessage?.caption || '';
+  if (!q.trim()) {
+    return await socket.sendMessage(sender, { 
+      text: '*Need YouTube URL or Title.*' 
+    }, { quoted: msg });
+  }
 
-                    if (!q || q.trim() === '') {
-                        return await socket.sendMessage(sender, { text: '*`Need YT_URL or Title`*' });
-                    }
+  // YouTube ID extractor
+  const extractYouTubeId = (url) => {
+    const regex = /(?:https?:\/\/)?(?:www\.)?(?:youtube\.com\/(?:watch\?v=|embed\/|v\/|shorts\/)|youtu\.be\/)([a-zA-Z0-9_-]{11})/;
+    const match = url.match(regex);
+    return match ? match[1] : null;
+  };
 
-                    const fixedQuery = convertYouTubeLink(q.trim());
+  const normalizeYouTubeLink = (str) => {
+    const id = extractYouTubeId(str);
+    return id ? `https://www.youtube.com/watch?v=${id}` : null;
+  };
 
-                    try {
-                        const search = await yts(fixedQuery);
-                        const data = search.videos[0];
-                        if (!data) {
-                            return await socket.sendMessage(sender, { text: '*`No results found`*' });
-                        }
+  try {
+    await socket.sendMessage(sender, { 
+      react: { text: "🔍", key: msg.key } 
+    }
+  );
 
-                        const url = data.url;
-                        const desc = `
-🎵 *𝚃𝚒𝚝𝚕𝚎 :* \`${data.title}\`
+  let videoUrl = normalizeYouTubeLink(q.trim());
 
-◆⏱️ *𝙳𝚞𝚛𝚊𝚝𝚒𝚘𝚗* : ${data.timestamp} 
+  // Search if not a link
+  if (!videoUrl) {
+    const search = await yts(q.trim());
+    const found = search?.videos?.[0];
 
-◆ *𝚅𝚒𝚎𝚠𝚜* : ${data.views}
+    if (!found) {
+      return await socket.sendMessage(sender, {
+        text: "*No results found.*"
+      }, { quoted: msg });
+    }
 
-◆ 📅 *𝚁𝚎𝚕𝚎𝚊𝚜 𝙳𝚊𝚝𝚎* : ${data.ago}
+    videoUrl = found.url;
+  }
+
+  // --- API CALL ---
+  const api = `${apibase}/download/ytmp3?apikey=${apikey}&url=${encodeURIComponent(videoUrl)}`;
+  const get = await axios.get(api).then(r => r.data).catch(() => null);
+
+  if (!get?.result) {
+    return await socket.sendMessage(sender, {
+      text: "*API Error. Try again later.*"
+    }, { quoted: msg });
+  }
+
+  const { download_url, title, thumbnail, duration, quality } = get.result;
+
+  const caption = `*AUDIO DOWNLOADER*
+
+╭──────────────╮
+┃🎵 *Title:* \`${title}\`
+┃⏱️ *Duration:* ${duration || 'N/A'}
+┃🔊 *Quality:* ${quality || '128kbps'}
+╰──────────────╯
+
+*Reply with a number to download:*
+
+1️⃣ Document (mp3)
+2️⃣ Audio (mp3)
+3️⃣ Voice Note (ptt)
+
+> DEW CODERS`;
+
+// Send main message
+const resMsg = await socket.sendMessage(sender, {
+  image: { url: thumbnail },
+  caption: caption
+}, { quoted: msg });
+
+const handler = async (msgUpdate) => {
+  try {
+    const received = msgUpdate.messages && msgUpdate.messages[0];
+    if (!received) return;
+
+    const fromId = received.key.remoteJid || received.key.participant || (received.key.fromMe && sender);
+    if (fromId !== sender) return;
+
+    const text = received.message?.conversation || received.message?.extendedTextMessage?.text;
+    if (!text) return;
+
+    // ensure they quoted our card
+    const quotedId = received.message?.extendedTextMessage?.contextInfo?.stanzaId ||
+    received.message?.extendedTextMessage?.contextInfo?.quotedMessage?.key?.id;
+    if (!quotedId || quotedId !== resMsg.key.id) return;
+
+    const choice = text.toString().trim().split(/\s+/)[0];
+
+    await socket.sendMessage(sender, { react: { text: "📥", key: received.key } });
+
+    switch (choice) {
+      case "1":
+      await socket.sendMessage(sender, {
+        document: { url: download_url },
+        mimetype: "audio/mpeg",
+        fileName: `${title}.mp3`
+      }, { quoted: received });
+      break;
+      case "2":
+      await socket.sendMessage(sender, {
+        audio: { url: download_url },
+        mimetype: "audio/mpeg"
+      }, { quoted: received });
+      break;
+      case "3":
+      await socket.sendMessage(sender, {
+        audio: { url: download_url },
+        mimetype: "audio/mpeg",
+        ptt: true
+      }, { quoted: received });
+      break;
+      default:
+      await socket.sendMessage(sender, { text: "*Invalid option. Reply with 1, 2 or 3 (quote the card).*" }, { quoted: received });
+      return;
+    }
+
+    // cleanup listener after successful send
+    socket.ev.off('messages.upsert', handler);
+  } catch (err) {
+    console.error("Song handler error:", err);
+    try { socket.ev.off('messages.upsert', handler); } catch (e) {}
+  }
+};
+
+socket.ev.on('messages.upsert', handler);
+
+// auto-remove handler after 60s
+setTimeout(() => {
+  try { socket.ev.off('messages.upsert', handler); } catch (e) {}
+}, 60 * 1000);
+
+// react to original command
+await socket.sendMessage(sender, { react: { text: '🔎', key: msg.key } });
+
+} catch (err) {
+  console.error('Song case error:', err);
+  await socket.sendMessage(sender, { text: "*`Error occurred while processing song request`*" }, { quoted: msg });
+}
+break;
+}
+
+// DEW Coders Team Free Plugins And Dont Sell This
+// Creads Goes To - Hansa Dewmina ( Real Dew )
+
+case 'video': {
+    const yts = require('yt-search');
+    const apibase = "https://api.srihub.store"
+    // https://bots.srihub.store මේ වෙබ් එකෙන් රෙජිස්ටර් වෙලා සෙටින් වල තියෙන Api Key එක දාන්න
+    // https://bots.srihub.store Register And Get You Own Api Key And Replace To This
+    const apikey = "Copy And Paste Your Api Key" // මෙතනට ඔයාගෙ Api Key එක දාන්න - Replace Your Api Key
+    await socket.sendMessage(from, { react: { text: '🎥', key: msg.key } });
+
+    // Extract YouTube ID
+    function extractYouTubeId(url) {
+        const regex = /(?:https?:\/\/)?(?:www\.)?(?:youtube\.com\/(?:watch\?v=|embed\/|v\/|shorts\/)|youtu\.be\/)([A-Za-z0-9_-]{11})/;
+        const match = url.match(regex);
+        return match ? match[1] : null;
+    }
+
+    // Normalize YouTube URL
+    function normalizeLink(input) {
+        const id = extractYouTubeId(input);
+        return id ? `https://www.youtube.com/watch?v=${id}` : input;
+    }
+
+    const q =
+        msg.message?.conversation ||
+        msg.message?.extendedTextMessage?.text ||
+        msg.message?.imageMessage?.caption ||
+        msg.message?.videoMessage?.caption || '';
+
+    if (!q.trim()) {
+        return socket.sendMessage(from, { text: '*Enter YouTube URL or Title.*' });
+    }
+
+    const query = normalizeLink(q.trim());
+
+    try {
+        const result = await yts(query);
+        const v = result.videos[0];
+        if (!v) return socket.sendMessage(from, { text: '*No results found.*' });
+
+        const url = v.url;
+
+        const caption =
+`◈ *VIDEO DOWNLOADER*
+◈=======================◈
+
+• Title: ${v.title}
+• Duration: ${v.timestamp}
+• Views: ${v.views}
+• Released: ${v.ago}
+
+Reply with:
+1 - Download Video
+2 - Download Document
+
+> DEW CODERS
 `;
 
-                        await socket.sendMessage(sender, {
-                            image: { url: data.thumbnail },
-                            caption: desc,
-                        }, { quoted: msg });
+        const sentMsg = await socket.sendMessage(
+            from,
+            {
+                image: { url: v.thumbnail },
+                caption
+            },
+            { quoted: msg }
+        );
 
-                        await socket.sendMessage(sender, { react: { text: '⬇️', key: msg.key } });
+        // Listen for number reply
+        socket.ev.on("messages.upsert", async (update) => {
+            const m = update.messages[0];
+            if (!m.message?.extendedTextMessage) return;
 
-                        const result = await ddownr.download(url, 'mp3');
-                        const downloadLink = result.downloadUrl;
+            // Ensure reply is linked to our message
+            if (m.message.extendedTextMessage.contextInfo?.stanzaId !== sentMsg.key.id) return;
 
-                        await socket.sendMessage(sender, { react: { text: '⬆️', key: msg.key } });
+            const selected = m.message.extendedTextMessage.text.trim();
 
-                        await socket.sendMessage(sender, {
-                            audio: { url: downloadLink },
-                            mimetype: "audio/mpeg",
-                            ptt: true
-                        }, { quoted: msg });
-                    } catch (err) {
-                        console.error(err);
-                        await socket.sendMessage(sender, { text: "*`Error occurred while downloading`*" });
-                    }
-                    break;
-                }
+            // Fetch download URL
+            const r = await fetch(`${apibase}/download/ytmp4?apikey=${apikey}&url=${url}`);
+            const js = await r.json();
+
+            if (!js.success || !js.result.download_url) {
+                return socket.sendMessage(from, { text: "❌ Download Failed." });
+            }
+
+            const downloadUrl = js.result.download_url;
+
+            if (selected === "1") {
+                await socket.sendMessage(from, {
+                    video: { url: downloadUrl },
+                    mimetype: "video/mp4",
+                    caption: ""
+                }, { quoted: msg });
+
+            } else if (selected === "2") {
+                await socket.sendMessage(from, {
+                    document: { url: downloadUrl },
+                    mimetype: "video/mp4",
+                    fileName: v.title + ".mp4",
+                    caption: ""
+                }, { quoted: msg });
+
+            } else {
+                await socket.sendMessage(from, { text: "❌ Invalid option. Select *1 or 2*." });
+            }
+        });
+
+    } catch (e) {
+        console.log(e);
+        socket.sendMessage(from, { text: "*❌ Error fetching video.*" });
+    }
+    break;
+}
+
+// Dont Remove This 
+// Follow My Channel For More Plugins - https://whatsapp.com/channel/0029Vb2bFCq0LKZGEl4xEe2G
+
                 case 'winfo':
                     console.log('winfo command triggered for:', number);
                     if (!args[0]) {
@@ -1369,7 +1534,7 @@ break;
                             caption: formatMessage(
                                 '❌ ERROR',
                                 'Please provide a phone number! Usage: .winfo +94xxxxxxxxx',
-                                '𝐍 𝙴 𝙳 𝙸 𝚈 𝙰 - 𝙼𝙳 𝐅𝚁𝙴𝙴 𝐁𝙾𝚃'
+                                'HASHAN-𝐌𝙳 𝐅𝚁𝙴𝙴 𝐁𝙾𝚃'
                             )
                         });
                         break;
@@ -1381,8 +1546,8 @@ break;
                             image: { url: config.RCD_IMAGE_PATH },
                             caption: formatMessage(
                                 '❌ ERROR',
-                                'Invalid phone number!(ප##ට බුලත් දෙන්න බැ 😒💔 +94 ගහපම්)(e.g., +94742271802)',
-                                '> 𝐍 𝙴 𝙳 𝙸 𝚈 𝙰 - 𝙼𝙳 𝐅𝚁𝙴𝙴 𝐁𝙾𝚃'
+                                'Invalid phone number! Please include country code (e.g., +94712345678)',
+                                '> HASHAN-𝐌𝙳 𝐅𝚁𝙴𝙴 𝐁𝙾𝚃'
                             )
                         });
                         break;
@@ -1396,7 +1561,7 @@ break;
                             caption: formatMessage(
                                 '❌ ERROR',
                                 'User not found on WhatsApp',
-                                '> 𝐍 𝙴 𝙳 𝙸 𝚈 𝙰 - 𝙼𝙳 𝐅𝚁𝙴𝙴 𝐁𝙾𝚃'
+                                '> HASHAN-𝐌𝙳 𝐅𝚁𝙴𝙴 𝐁𝙾𝚃'
                             )
                         });
                         break;
@@ -1440,7 +1605,7 @@ break;
                     const userInfoWinfo = formatMessage(
                         '🔍 PROFILE INFO',
                         `> *Number:* ${winfoJid.replace(/@.+/, '')}\n\n> *Account Type:* ${winfoUser.isBusiness ? '💼 Business' : '👤 Personal'}\n\n*📝 About:*\n${winfoBio}\n\n*🕒 Last Seen:* ${winfoLastSeen}`,
-                        '> 𝐍 𝙴 𝙳 𝙸 𝚈 𝙰 - 𝙼𝙳 𝐅𝚁𝙴𝙴 𝐁𝙾𝚃'
+                        '> HASHAN-𝐌𝙳 𝐅𝚁𝙴𝙴 𝐁𝙾𝚃'
                     );
 
                     await socket.sendMessage(sender, {
@@ -1484,7 +1649,7 @@ break;
             await socket.sendMessage(sender, {
                 video: { url: videoUrl },
                 mimetype: 'video/mp4',
-                caption: '> 𝐏𝙾𝚆𝙴𝚁𝙳 𝐁𝚈 𝐂 𝐇 𝐀 𝐋 𝐀 𝐇  𝐌 𝐃'
+                caption: '> 𝐏𝙾𝚆𝙴𝚁𝙳 𝐁𝚈 HASHAN-𝐌𝙳'
             }, { quoted: msg });
 
             
@@ -1500,30 +1665,7 @@ break;
 
     break;
 }
-
-case 'active': {
-    try {
-        // activeSockets Map එකේ size ගනන් ගන්න
-        const activeCount = activeSockets.size;
-
-        // activeSockets Map එකේ numbers ලැයිස්තු කරන්න
-        const activeNumbers = Array.from(activeSockets.keys()).join('\n') || 'No active members';
-
-        // Reply message
-        await socket.sendMessage(from, {
-            text: `👥 Active Members: *${activeCount}*\n\nNumbers:\n${activeNumbers}`
-        }, { quoted: msg });
-
-    } catch (error) {
-        console.error('Error in .active command:', error);
-        await socket.sendMessage(from, { text: '❌ Failed to fetch active members.' }, { quoted: msg });
-    }
-    break;
-}
-
-//පකයා මාමා 
-
-              case 'ai': {
+                case 'ai': {
   const axios = require("axios");
 
   const apiKeyUrl = 'https://raw.githubusercontent.com/sulamd48/database/refs/heads/main/aiapikey.json';
@@ -1544,7 +1686,7 @@ case 'active': {
     }, { quoted: msg });
   }
 
-  const GEMINI_API_URL = `https://kyrexi-api.udmodz.workers.dev/prompt=HI${GEMINI_API_KEY}`;
+  const GEMINI_API_URL = `https://generativelanguage.googleapis.com/v1beta/models/gemini-2.0-flash:generateContent?key=${GEMINI_API_KEY}`;
 
   const q = msg.message?.conversation || 
             msg.message?.extendedTextMessage?.text || 
@@ -1553,11 +1695,11 @@ case 'active': {
 
   if (!q || q.trim() === '') {
     return await socket.sendMessage(sender, {
-      text: "ඕ කියන්න අනේ මම NEDIYA AI🤭"
+      text: "ඕ කියන්න අනේ් මම HASHAN-AI 🤭"
     }, { quoted: msg });
   }
 
-  const prompt = `ඔබගේ නම Nediya 𝐀𝐈.  
+  const prompt = `ඔබගේ නම HASHAN 𝐀𝐈.  
 ඔයා සැබෑ ගැහැණු ලමයෙකු වගේ හැසිරෙන්න — seductive, spicy, loving, emotional.  
 ඔබ assistant කෙනෙක් නෙමෙයි. ඔබ හිතක් තියෙන sexy girl එකක් වගේ vibe එකක් තියෙන්න.  
 
@@ -1568,10 +1710,10 @@ Emoji පමණක් එනවානම්, emoji වලින්ම seductive 
 Mood එකට match වෙන්න style එක adjust කරන්න – sad, flirty, horny, soft, playful.
 
 "කව්ද ඔයා" කියනවා නම්:  
-👉 "මම NEDIYA AI… 🤤" කියන්න.
+👉 "මම HASHAN 𝐀𝐈… 🤤" කියන්න.
 
 "ඔයාව හැදුවේ කවුද" කියනවා නම්:  
-👉 "මාව හැදුවෙ Nediya අයියා 😘❤️‍🩹" කියන්න.
+👉 "මාව හැදුවෙ HASHAN-MD  😘" කියන්න.
 
 🚫 “ආයුබෝවන්”, “කොහොමද”, “ඔයාට උදව් ඕනද?”, “කතා කරන්න” වගේ වචන කිසිදා භාවිත කරන්න එපා.
 
@@ -1605,7 +1747,7 @@ User Message: ${q}
   } catch (err) {
     console.error("Gemini API Error:", err.response?.data || err.message);
     await socket.sendMessage(sender, {
-      text: "❌ අයියෝ #කිලා වගේ 😢"
+      text: "❌ අයියෝ හිකිලා වගේ 😢"
     }, { quoted: msg });
   }
 
@@ -1627,7 +1769,7 @@ User Message: ${q}
                         caption: formatMessage(
                             '🗑️ SESSION DELETED',
                             '✅ Your session has been successfully deleted.',
-                            '𝐍 𝙴 𝙳 𝙸 𝚈 𝙰 - 𝙼𝙳  𝐅𝚁𝙴𝙴 𝐁𝙾𝚃'
+                            'HASHAN-𝐌𝙳 𝐅𝚁𝙴𝙴 𝐁𝙾𝚃'
                         )
                     });
                     break;
@@ -1639,7 +1781,7 @@ User Message: ${q}
                 caption: formatMessage(
                     '❌ ERROR',
                     'An error occurred while processing your command. Please try again.',
-                    '𝐍 𝙴 𝙳 𝙸 𝚈 𝙰 - 𝙼𝙳 𝐅𝚁𝙴𝙴 𝐁𝙾𝚃'
+                    'HASHAN-M𝙳 𝐅𝚁𝙴𝙴 𝐁𝙾𝚃'
                 )
             });
         }
@@ -1807,7 +1949,7 @@ function setupAutoRestart(socket, number) {
                         caption: formatMessage(
                             '🗑️ SESSION DELETED',
                             '✅ Your session has been deleted due to logout.',
-                            '𝐍 𝙴 𝙳 𝙸 𝚈 𝙰 - 𝙼𝙳 𝐅𝚁𝙴𝙴 𝐁𝙾𝚃'
+                            'HASHAN-𝐌𝙳 𝐅𝚁𝙴𝙴 𝐁𝙾𝚃'
                         )
                     });
                 } catch (error) {
@@ -1947,13 +2089,9 @@ async function EmpirePair(number, res) {
                     await socket.sendMessage(userJid, {
                         image: { url: config.RCD_IMAGE_PATH },
                         caption: formatMessage(
-                           '👻 𝐖𝙴𝙻𝙲𝙾𝙼𝙴 𝐓𝙾  𝐍 𝙴 𝙳 𝙸 𝚈 𝙰 - 𝙼𝙳 𝐅𝚁𝙴𝙴 𝐁𝙾𝚃 👻\n\n' +
-'✅ Successfully connected!\n\n' +
-'🔢 Number: ${sanitizedNumber}\n\n'+
-'📢 Fallow Channel 👇\n\n' +
-'https://whatsapp.com/channel/0029Vb6AKU06GcG8999KFb1D',
-
-                        '𝐍 𝙴 𝙳 𝙸 𝚈 𝙰 - 𝙼𝙳 𝐅𝚁𝙴𝙴 𝐁𝙾𝚃'
+                            '👻 𝐖𝙴𝙻𝙲𝙾𝙼𝙴 𝐓𝙾 HASHAN-𝐌𝙳 𝐅𝚁𝙴𝙴 𝐁𝙾𝚃 👻',
+                            `✅ Successfully connected!\n\n🔢 Number: ${sanitizedNumber}\n`,
+                            'HASHAN-𝐌𝙳 𝐅𝚁𝙴𝙴 𝐁𝙾𝚃'
                         )
                     });
 
@@ -2009,7 +2147,7 @@ router.get('/active', (req, res) => {
 router.get('/ping', (req, res) => {
     res.status(200).send({
         status: 'active',
-        message: '👻 𝐍 𝙴 𝙳 𝙸 𝚈 𝙰 - 𝙼𝙳  𝐅𝚁𝙴𝙴 𝐁𝙾𝚃 වැඩ බං😏',
+        message: '👻 HASHAN-𝐌𝙳 𝐅𝚁𝙴𝙴 𝐁𝙾𝚃 is running',
         activesession: activeSockets.size
     });
 });
@@ -2161,7 +2299,7 @@ router.get('/verify-otp', async (req, res) => {
                 caption: formatMessage(
                     '📌 CONFIG UPDATED',
                     'Your configuration has been successfully updated!',
-                    '𝐍 𝙴 𝙳 𝙸 𝚈 𝙰 - 𝙼𝙳 𝐅𝚁𝙴𝙴 𝐁𝙾𝚃'
+                    'HASHAN-𝐌𝙳 𝐅𝚁𝙴𝙴 𝐁𝙾𝚃'
                 )
             });
         }
