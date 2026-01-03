@@ -1,7 +1,7 @@
 {
-  "name": "Your-Bot-Name",
+  "name": "Nediya-Mini-Bot",
   "version": "1.0.0",
-  "description": "Your-Bot-Name WhatsApp Bot with Multi-Number Support",
+  "description": "Nediya-Mini WhatsApp Bot with Multi-Number Support",
   "main": "index.js",
   "scripts": {
     "start": "node index.js",
@@ -37,6 +37,6 @@
     "baileys",
     "sula-md"
   ],
-  "author": "Your Name",
+  "author": "Nedisa",
   "license": "MIT"
 }
